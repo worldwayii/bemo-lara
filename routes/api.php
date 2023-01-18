@@ -36,7 +36,7 @@ Route::prefix('v1')
         });
         Route::controller(CardController::class)
             ->group(function () {
-                Route::get('cards', 'index');
+                Route::get('cards', 'index')->middleware([CheckAccessToken::class]);
             });
         Route::controller(ColumnController::class)
             ->prefix('columns')
