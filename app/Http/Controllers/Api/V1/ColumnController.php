@@ -15,7 +15,7 @@ class ColumnController extends Controller
     {
         return ['data' => ColumnResource::collection(Column::all()->load('cards'))];
     }
-    public function store(Request $request)
+    public function store(CreateColumnRequest $request)
     {
         $column = Column::create($request->all());
 
